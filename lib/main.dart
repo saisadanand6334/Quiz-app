@@ -3,9 +3,7 @@ import 'package:qapp/clas.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 void main() {
-  runApp(MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home:const Quizapp()));
+  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: const Quizapp()));
 }
 
 class Quizapp extends StatefulWidget {
@@ -78,8 +76,7 @@ class _QuizappState extends State<Quizapp> {
   }
 
   int reset() {
-   return q = 0;
-
+    return q = 0;
   }
 
   bool finel() {
@@ -100,7 +97,7 @@ class _QuizappState extends State<Quizapp> {
               desc: 'Do you want to continue')
           .show();
       reset();
-      plo=[];
+      plo = [];
     } else {
       if (correctanswer == useranswer) {
         plo.add(Icon(
@@ -119,74 +116,74 @@ class _QuizappState extends State<Quizapp> {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-          backgroundColor: Colors.black,
-          body: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Expanded(
-                          child: Text(
-                            "${qus()}",
-                            style: TextStyle(fontSize: 30, color: Colors.white),
-                          ),
-                        ),
-                      ],
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: Text(
+                        "${qus()}",
+                        style: TextStyle(fontSize: 30, color: Colors.white),
+                      ),
                     ),
-                  ),
+                  ],
                 ),
-                SizedBox(
-                  height: 400,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Container(
-                    height: 50,
-                    width: double.maxFinite,
-                    color: Colors.green,
-                    child: TextButton(
-                        onPressed: () {
-                          setState(() {
-                            tot(true);
-                          });
-                        },
-                        child: Text(
-                          'TRUE ',
-                          style: TextStyle(fontSize: 20, color: Colors.black),
-                        )),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Container(
-                    height: 50,
-                    width: double.maxFinite,
-                    color: Colors.red,
-                    child: TextButton(
-                        onPressed: () {
-                          setState(() {
-                            tot(false);
-                          });
-                        },
-                        child: Text(
-                          'FALSE',
-                          style: TextStyle(fontSize: 20, color: Colors.black),
-                        )),
-                  ),
-                ),
-                Row(
-                  children: plo,
-                )
-              ]),
-        );
+              ),
+            ),
+            SizedBox(
+              height: 400,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: Container(
+                height: 50,
+                width: double.maxFinite,
+                color: Colors.green,
+                child: TextButton(
+                    onPressed: () {
+                      setState(() {
+                        tot(true);
+                      });
+                    },
+                    child: Text(
+                      'TRUE ',
+                      style: TextStyle(fontSize: 20, color: Colors.black),
+                    )),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: Container(
+                height: 50,
+                width: double.maxFinite,
+                color: Colors.red,
+                child: TextButton(
+                    onPressed: () {
+                      setState(() {
+                        tot(false);
+                      });
+                    },
+                    child: Text(
+                      'FALSE',
+                      style: TextStyle(fontSize: 20, color: Colors.black),
+                    )),
+              ),
+            ),
+            Row(
+              children: plo,
+            )
+          ]),
+    );
   }
 }
